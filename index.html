@@ -5,19 +5,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Vue.js</title>
 </head>
 
 <body>
 <div id="app">
     <h1>{{title}}</h1>
     <ul>
-        <li v-for="fruit of fruits">{{fruit.quantity}} - {{fruit.name}}
+        <li v-for="fruit of fruits">
+            <input type="text" v-model.number="fruit.quantity"> - {{fruit.name}}
             <span v-if="fruit.quantity === 0">- Sin stock</span>
+            <button @click="fruit.quantity++">+</button>
+            <button @click="(fruit.quantity > 0) ? fruit.quantity--: fruit.quantity = 0">-</button>
         </li>
     </ul>
-    <input type="text" v-model="newFruit"> <input type="text" v-model="newQuantity">
-    <button v-on:click="addFruit">Add</button>
+
+    <input type="text" v-model="newFruit" @keyup.enter="addFruit"> <input type="text" v-model="newQuantity">
+    <button @click="addFruit">Add</button>
+
+    <h4>Total: {{ totalStock }}</h4>
 </div>
 
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.6/dist/vue.js"></script>
