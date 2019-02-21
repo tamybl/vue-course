@@ -6,3 +6,10 @@ const app2 = new Vue({
     }
 
 })
+
+const form = new Vue({
+    el: '#form',
+    data: {
+        message: ''
+    }
+})
