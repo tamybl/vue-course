@@ -19,16 +19,13 @@ const app = new Vue({
     },
     methods: {
         addFruit() {
-            console.log('click');
             if (this.newFruit !== '' && this.newQuantity !== '') {
                 this.fruits.push({
                     name: this.newFruit,
                     quantity: this.newQuantity
                 })
                 this.newFruit = '', this.newQuantity = '';
-
             }
-
         }
     },
     computed: {
@@ -37,13 +34,6 @@ const app = new Vue({
             this.total = this.fruits.reduce((a, b) => a.quantity + b.quantity);
             return this.total;
         }
-        // totalStock() {
-        //     this.total = 0;
-        //     for (fruit of this.fruits) {
-        //         this.total = this.total + fruit.quantity;
-        //     }
-        //     return this.total;
-        // }
     }
 
 })
