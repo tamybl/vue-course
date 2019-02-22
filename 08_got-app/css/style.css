@@ -1,0 +1,8 @@
+body {
+    background: #0b1215;
+    color: var(--light);
+}
+.header-container {
+    background: url(./../img/bg_got.png) no-repeat center;
+    min-height: 600px;
+}
